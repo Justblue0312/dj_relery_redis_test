@@ -1,0 +1,14 @@
+[Celery]
+# Celery 4.0+ does not officially support Windows yet. But it still works on Windows for some development/test purposes.
+
+[case 1]
+# pip install eventlet 
+# celery -A taskview_proj worker -l info -P eventlet
+
+[case 2]
+# pip install gevent
+# celery -A taskview_proj worker -l info -P gevent
+
+[celery-beat]
+#celery -A taskview_proj beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
+#celery -A taskview_proj beat -l INFO 
