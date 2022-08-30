@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     #celery
     'django_celery_results',
     'django_celery_beat',
+
+    #flower
+    'flower',
 ]
 
 MIDDLEWARE = [
@@ -160,3 +163,7 @@ CELERY_IMPORTS = [
 ]
 
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+
+BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_TASK_ALWAYS_EAGER = False

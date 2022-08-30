@@ -12,3 +12,8 @@
 [celery-beat]
 #celery -A taskview_proj beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
 #celery -A taskview_proj beat -l INFO 
+
+[flower]
+# celery -A taskview_proj flower --loglevel=DEBUG --port=9090 
+# celery -A taskview_proj flower --loglevel=info
+# http://127.0.0.1:9090/
